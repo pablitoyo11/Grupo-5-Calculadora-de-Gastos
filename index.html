@@ -24,9 +24,12 @@
       <button type="submit">Actualizar</button>
     </div>
 
-    <div class="formulario">
-      <h1>Gastos</h1>
-      <form id="formularioCotizacion">
+    <button id="btnAbrirAgregarGastosModal">Adicionar Gastos</button>
+
+    <div id="agregarGastosModal" class="modal" style="display: none">
+      <button id="btnCerrarAgregarGastosModal">&times;</button>
+      <h1>Agregar Gastos</h1>
+      <form id="formularioGastos">
         <label for="gastoCategoria">Categoria</label>
         <input
           type="text"
@@ -35,7 +38,6 @@
           placeholder="Alquiler"
           required
         />
-
         <label for="gastoMonto">Monto</label>
         <input
           type="number"
@@ -44,12 +46,11 @@
           placeholder="100.00"
           required
         />
-
-        <button type="submit">Agregar Gasto</button>
+        <button type="submit">Agregar</button>
       </form>
     </div>
 
-    <div class="resumen" id="resumen">
+    <div class="resumen" id="resumenGastos">
       <h2>
         - Total de gastos - Presupuesto máximo - Promedio - historial de gastos
         - Restante
