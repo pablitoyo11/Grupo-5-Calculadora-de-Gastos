@@ -27,8 +27,8 @@
     <button id="btnAbrirAgregarGastosModal">Adicionar Gastos</button>
 
     <div id="agregarGastosModal" class="modal" style="display: none">
-      <button id="btnCerrarAgregarGastosModal">&times;</button>
-      <h1>Agregar Gastos</h1>
+      <button id="btnCerrarAgregarGastosModal">Cerrar &times;</button>
+      <h2 id="agregarGastosh2">Agregar Gastos</h2>
       <form id="formularioGastos">
         <label for="gastoCategoria">Categoria</label>
         <input
@@ -46,20 +46,20 @@
           placeholder="100.00"
           required
         />
-        <button type="submit">Agregar</button>
+        <button type="submit">Agregar Gasto</button>
       </form>
     </div>
 
     <div class="resumen" id="resumenGastos">
       <h2>
-        - Total de gastos - Presupuesto máximo - Promedio - historial de gastos
-        - Restante
+        Presupuesto máximo - Monto total de gastos - Promedio de gastos -
+        Restante - Historial de gastos
       </h2>
-      <div>Total de gastos</div>
-      <div>Presupuesto máximo</div>
-      <div>Promedio</div>
-      <div>Historial de gastos</div>
-      <div>Restante</div>
+      <p>Presupuesto Maximo:</p>
+      <p>Monto total de Gastos:</p>
+      <p>Promedio de gastos:</p>
+      <p>Restante</p>
+      <p>Restante</p>
 
       <div id="resultado" class="resultado">
         Complete el formulario para ver el resultado

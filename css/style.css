@@ -1,0 +1,201 @@
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --accent: #06b6d4;
+  --muted: #4b5563;
+  --row-odd: #fbfdff;
+  --radius: 10px;
+  --max-width: 720px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 12px;
+}
+body > * {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.4rem;
+}
+h2 {
+  margin: 0 0 6px 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.presupuestoMaximo {
+  background: var(--card);
+  padding: 14px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.presupuestoMaximo label {
+  color: var(--muted);
+}
+.presupuestoMaximo input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.presupuestoMaximo button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#btnAbrirAgregarGastosModal {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.35);
+}
+.modal[style*="display: none"] {
+  display: none;
+}
+
+#agregarGastosModal > #agregarGastosh2 {
+  top: 5px;
+  left: 16px;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  background: transparent;
+  border: none;
+  background: white;
+  border-radius: 10px;
+  font-size: 22px;
+  color: var(--muted);
+  cursor: pointer;
+}
+#agregarGastosModal > button:first-child {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  background: white;
+  border-radius: 10px;
+  font-size: 22px;
+  color: var(--muted);
+  cursor: pointer;
+}
+#agregarGastosModal form {
+  width: 100%;
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+#agregarGastosModal input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+#agregarGastosModal button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.resumen {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.resumen > div {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+.resultado {
+  font-weight: 700;
+  text-align: center;
+  color: var(--muted);
+}
+
+#resumenGastos p strong {
+  display: block;
+  margin-bottom: 8px;
+}
+#resumenGastos #gastoItemHistorial {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(15, 23, 42, 0.03);
+  background: var(--row-odd);
+  margin: 6px 0;
+}
+
+/* Las dos "columnas" internas */
+#gastoItemHistorial p {
+  margin: 0;
+  flex: 1;
+}
+#gastoItemHistorial #gastoItemHistorialCategoria {
+  color: var(--muted);
+}
+#gastoItemHistorial #gastoItemHistorialMonto {
+  text-align: right;
+  font-weight: 700;
+}
+
+#resumenGastos .no-gastos {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px dashed #eceff5;
+  color: var(--muted);
+  text-align: center;
+}
+
+button:focus,
+input:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.15);
+  outline-offset: 2px;
+}

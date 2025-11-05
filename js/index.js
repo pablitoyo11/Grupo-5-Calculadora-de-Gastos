@@ -28,11 +28,11 @@ formularioGastos.addEventListener("submit", function (e) {
   e.preventDefault();
   let inputPresupuestoMax = inputPresupuestoMaxElement.value;
   if (inputPresupuestoMax <= 0) {
-    alert(
-      "Por favor, ingrese un presupuesto maximo para mejorar la experiencia"
-    );
+    alert("Por favor, ingrese un presupuesto maximo antes de continuar");
+    agregarGastosModal.style.display = "none";
     return;
   }
+
   const gastoCategoria = document.getElementById("gastoCategoria").value;
   const gastoMonto = document.getElementById("gastoMonto").value;
   if (!gastoCategoria || !gastoMonto) {
@@ -57,10 +57,10 @@ function calcularTotalGastos() {
   let arrayToHtmlHistorialGastos = "";
   for (let index = 0; index < arrayDeGastos.length; index++) {
     arrayToHtmlHistorialGastos += `
-    <p>
-      <strong>Categoria: </strong>${arrayDeGastos[index].categoria}
-      <strong>Monto: </strong> ${arrayDeGastos[index].monto}
-    </p>;
+    <div id="gastoItemHistorial">
+      <p id="gastoItemHistorialCategoria"><strong>Categoria: </strong>${arrayDeGastos[index].categoria}</p>
+      <p id="gastoItemHistorialMonto"><strong>Monto: </strong> ${arrayDeGastos[index].monto}</p>
+    </div>
     `;
   }
 
@@ -74,6 +74,6 @@ function calcularTotalGastos() {
         }</p>
 
         <p><strong>Historial de gastos:</strong>${arrayToHtmlHistorialGastos}</p>
-      
+    
     `;
 }
